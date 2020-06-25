@@ -11,11 +11,19 @@ class ElementSceny: public Sprite{
 public:
     ElementSceny();
 };
+struct Cuk{
+    int typ=rand()%7;
+};
+
 class Cukierek: public ElementSceny{
+    Texture cukierek;
+public:
+    vector <Cuk> Cukierki_typy;
     Cukierek();
     void zamiana();
     void usun();
     void wyswietl();
+    int typ();
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();

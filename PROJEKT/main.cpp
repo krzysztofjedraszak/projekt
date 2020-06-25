@@ -16,6 +16,8 @@ int main()
     RenderWindow window(sf::VideoMode(1280, 720), "CandyCrushSaga");
     Clock clock;
     Plansza p1;
+    Cukierek c1;
+
 
     while (window.isOpen()) {
 
@@ -33,6 +35,7 @@ int main()
         window.clear(Color::Black);
 
         window.draw(p1);
+        window.draw(c1);
 
         window.display();
 
