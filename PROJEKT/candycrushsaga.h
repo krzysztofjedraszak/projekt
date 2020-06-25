@@ -10,20 +10,17 @@ using namespace sf;
 class ElementSceny: public Sprite{
 public:
     ElementSceny();
-};
-struct Cuk{
-    int typ=rand()%7;
+
 };
 
-class Cukierek: public ElementSceny{
+struct Cukierek: public ElementSceny{
     Texture cukierek;
 public:
-    vector <Cuk> Cukierki_typy;
-    Cukierek();
+    Cukierek(int x, int y);
     void zamiana();
     void usun();
     void wyswietl();
-    int typ();
+    int typ;
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();
