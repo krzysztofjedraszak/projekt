@@ -1,31 +1,37 @@
 #ifndef ELEMENTSCENY_H
 #define ELEMENTSCENY_H
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <iostream>
 
+using namespace std;
+using namespace sf;
 
-class ElementSceny
-{
+class ElementSceny: public Sprite{
 public:
     ElementSceny();
 };
-class Cukierek{
+class Cukierek: public ElementSceny{
     Cukierek();
     void zamiana();
     void usun();
     void wyswietl();
 };
-class NajlepszyWynik{
+class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();
     void wyswietl();
     void wczytaj();
 };
-class AktualnyWynik{
+class AktualnyWynik: public ElementSceny{
     AktualnyWynik();
     void wyswietl();
 };
-class Plansza{
+class Plansza: public ElementSceny{
+    Texture plansza;
+public:
     Plansza();
 };
-class Zegar{
+class Zegar: public ElementSceny{
     Zegar();
     void odliczanie();
 };
