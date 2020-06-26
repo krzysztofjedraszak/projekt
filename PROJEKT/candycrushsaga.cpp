@@ -50,7 +50,7 @@ void Cukierek::zaznaczcukierek(const Vector2i mouse_position)
            mouse_position.y >= bounds.top &&
            mouse_position.y <= bounds.top+bounds.height
                 ){
-            setTexture(znacznik);
+            setTexture(znacznik);setTexture(cukierek);
             setPosition(bounds.left,bounds.top);
         }
 }

@@ -41,7 +41,6 @@ int main()
 
 
 
-
     while (window.isOpen()) {
 
 //        sf::Time elapsed_ = clock.restart();
