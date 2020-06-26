@@ -14,14 +14,14 @@ public:
 
 class Cukierek: public ElementSceny{
     Texture cukierek;
-    Texture znacznik;
+
 public:
     Cukierek(int x, int y);
     void zamiana();
     void usun();
     void wyswietl();
     int typ;
-    void zaznaczcukierek(const Vector2i mouse_position);
+    bool zaznaczcukierek(const Vector2i mouse_position);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();
@@ -41,4 +41,10 @@ class Zegar: public ElementSceny{
     Zegar();
     void odliczanie();
 };
+class Znacznik: public ElementSceny{
+    Texture znacznik;
+public:
+    Znacznik(int x, int y);
+};
+
 #endif // ELEMENTSCENY_H

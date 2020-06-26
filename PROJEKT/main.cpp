@@ -31,13 +31,14 @@ int main()
     Plansza p1;
 
     vector <Cukierek*> elementy;
+    vector <Znacznik*> znaczniki;
 
     for(int j=0;j<10;j++){
     for(int i=0;i<10;i++){
         elementy.emplace_back(new Cukierek(154+i*50,104+j*50));
     }
     }
-
+    int klikniecia=1;
 
 
 
@@ -58,10 +59,17 @@ int main()
                     Vector2i mouse_pos = sf::Mouse::getPosition(window);
                     cout << "Mouse clicked: " << mouse_pos.x << ", " << mouse_pos.y << endl;
 
-                    for(unsigned int i=0;i<elementy.size();i++){
-                        elementy[i]->zaznaczcukierek(mouse_pos);
-                }
+//                    for(unsigned int i=0;i<elementy.size();i++){
+//                        elementy[i]->zaznaczcukierek(mouse_pos);
+//                }
 
+                    for(unsigned int i=0;i<100;i++){
+                        if(elementy[i]->zaznaczcukierek(mouse_pos)&&klikniecia==1){
+                            auto pos=elementy[i]->getGlobalBounds();
+                            znaczniki.emplace_back(new Znacznik (pos.left,pos.top));
+                            klikniecia--;
+                        }
+                    }
             }
         }
 }
@@ -71,6 +79,10 @@ int main()
         for(auto &s:elementy){
             window.draw(*s);
         }
+        for(auto &z:znaczniki){
+            window.draw(*z);
+        }
+
 
         window.display();
 

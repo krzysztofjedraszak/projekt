@@ -31,12 +31,12 @@ void Cukierek::wyswietl()
 
 }
 
-void Cukierek::zaznaczcukierek(const Vector2i mouse_position)
+bool Cukierek::zaznaczcukierek(const Vector2i mouse_position)
 {
 
-    if (!znacznik.loadFromFile("grafika/kursor.png")) {
-        std::cerr << "Could not load texture" << std::endl;
-    }
+//    if (!znacznik.loadFromFile("grafika/kursor.png")) {
+//        std::cerr << "Could not load texture" << std::endl;
+//    }
 
 //    for(unsigned int i=0;i<elementy.size();i++){
 //        setTexture(znacznik);
@@ -50,9 +50,11 @@ void Cukierek::zaznaczcukierek(const Vector2i mouse_position)
            mouse_position.y >= bounds.top &&
            mouse_position.y <= bounds.top+bounds.height
                 ){
-            setTexture(znacznik);setTexture(cukierek);
-            setPosition(bounds.left,bounds.top);
+//            setTexture(znacznik);
+//            setPosition(bounds.left,bounds.top);
+            return true;
         }
+        else return false;
 }
 //}
 
@@ -90,29 +92,11 @@ Plansza::Plansza()
     setTexture(plansza);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Znacznik::Znacznik(int x, int y)
+{
+    if (!znacznik.loadFromFile("grafika/kursor.png")) {
+        std::cerr << "Could not load texture" << std::endl;
+    }
+    setTexture(znacznik);
+    setPosition(x,y);
+}
