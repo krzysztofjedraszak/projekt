@@ -10,17 +10,18 @@ using namespace sf;
 class ElementSceny: public Sprite{
 public:
     ElementSceny();
-
 };
 
-struct Cukierek: public ElementSceny{
+class Cukierek: public ElementSceny{
     Texture cukierek;
+    Texture znacznik;
 public:
     Cukierek(int x, int y);
     void zamiana();
     void usun();
     void wyswietl();
     int typ;
+    void zaznaczcukierek(const Vector2i mouse_position);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();

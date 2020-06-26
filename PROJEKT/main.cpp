@@ -11,6 +11,19 @@
 using namespace std;
 using namespace sf;
 
+//bool isclicked(const Vector2i mouse_position,vector<Cukierek*> &elementy ){
+
+//    for(unsigned int i=0;i<elementy.size();i++){
+//        FloatRect bounds = elementy[i]->getGlobalBounds();
+//        if(mouse_position.x >= bounds.left &&
+//           mouse_position.x <= bounds.left+bounds.width &&
+//           mouse_position.y >= bounds.top &&
+//           mouse_position.y <= bounds.top+bounds.height
+//                ){
+//            return 1;
+//        }
+//    }
+//}
 int main()
 {
     RenderWindow window(sf::VideoMode(1280, 720), "CandyCrushSaga");
@@ -46,11 +59,13 @@ int main()
                     Vector2i mouse_pos = sf::Mouse::getPosition(window);
                     cout << "Mouse clicked: " << mouse_pos.x << ", " << mouse_pos.y << endl;
 
-
+                    for(unsigned int i=0;i<elementy.size();i++){
+                        elementy[i]->zaznaczcukierek(mouse_pos);
                 }
+
             }
         }
-
+}
         window.clear(Color::Black);
 
         window.draw(p1);
