@@ -10,6 +10,7 @@ using namespace sf;
 class ElementSceny: public Sprite{
 public:
     ElementSceny();
+    bool zaznaczcukierek(const Vector2i mouse_position);
 };
 
 class Cukierek: public ElementSceny{
@@ -21,7 +22,9 @@ public:
     void usun();
     void wyswietl();
     int typ;
-    bool zaznaczcukierek(const Vector2i mouse_position);
+    bool jest_klikniety;
+//    bool zaznaczcukierek(const Vector2i mouse_position);
+    bool Czy_obok();
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();

@@ -14,6 +14,7 @@ Cukierek::Cukierek(int x,int y)
     setTexture(cukierek);
     setTextureRect(IntRect(typ*49,0,49,49));
     setPosition(x,y);
+    jest_klikniety=false;
 }
 //152x104 poczatek pola
 void Cukierek::zamiana()
@@ -31,13 +32,8 @@ void Cukierek::wyswietl()
 
 }
 
-bool Cukierek::zaznaczcukierek(const Vector2i mouse_position)
+bool ElementSceny::zaznaczcukierek(const Vector2i mouse_position)
 {
-
-//    if (!znacznik.loadFromFile("grafika/kursor.png")) {
-//        std::cerr << "Could not load texture" << std::endl;
-//    }
-
 //    for(unsigned int i=0;i<elementy.size();i++){
 //        setTexture(znacznik);
 //        auto pos=elementy[i]->getPosition();
@@ -56,7 +52,12 @@ bool Cukierek::zaznaczcukierek(const Vector2i mouse_position)
         }
         else return false;
 }
-//}
+
+bool Cukierek::Czy_obok()
+{
+
+}
+
 
 
 NajlepszyWynik::NajlepszyWynik()

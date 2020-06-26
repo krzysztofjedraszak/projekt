@@ -30,6 +30,7 @@ int main()
     Clock clock;
     Plansza p1;
 
+
     vector <Cukierek*> elementy;
     vector <Znacznik*> znaczniki;
 
@@ -39,6 +40,7 @@ int main()
     }
     }
     int klikniecia=1;
+
 
 
 
@@ -63,15 +65,38 @@ int main()
 //                        elementy[i]->zaznaczcukierek(mouse_pos);
 //                }
 
-                    for(unsigned int i=0;i<100;i++){
-                        if(elementy[i]->zaznaczcukierek(mouse_pos)&&klikniecia==1){
+                    for(unsigned int i=0;i<elementy.size();i++){
+                        if(elementy[i]->zaznaczcukierek(mouse_pos)&&elementy[i]->jest_klikniety==false&&klikniecia==1){
                             auto pos=elementy[i]->getGlobalBounds();
                             znaczniki.emplace_back(new Znacznik (pos.left,pos.top));
-                            klikniecia--;
+                            elementy[i]->jest_klikniety=true;
+                            klikniecia=0;
+                            cout<<"nowy"<<endl;
+//
+                        }}
+//                        else if(elementy[i]->zaznaczcukierek(mouse_pos)&&elementy[i]->jest_klikniety==true&&klikniecia==0){
+//                            klikniecia=1;
+//                            elementy[i]->jest_klikniety=false;
+//                            cout<<"usun"<<endl;
+//                            delete *(znaczniki);
+//                            znaczniki.erase(znaczniki.begin()+i);
+//                        }
+                            if(znaczniki[0]->zaznaczcukierek(mouse_pos)/*&&elementy[i]->jest_klikniety==true&&klikniecia==0*/){
+                            klikniecia=1;
+//                            elementy[i]->jest_klikniety=false;
+                            cout<<"usun"<<endl;
+//                            delete *(znaczniki);
+//                            znaczniki.erase(znaczniki.begin()+i);
                         }
-                    }
+
             }
         }
+            if (event.type == Event::MouseButtonPressed) {
+                if (event.mouseButton.button == Mouse::Right) {
+                    for(int i=0;i<znaczniki.size();i++){
+                    delete *(znaczniki.begin());
+                }
+            }}
 }
         window.clear(Color::Black);
 
