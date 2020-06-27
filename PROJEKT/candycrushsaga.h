@@ -19,11 +19,9 @@ class Cukierek: public ElementSceny{
 public:
     Cukierek(int x, int y);
     void zamiana();
-    void usun();
     void wyswietl(vector<Cukierek *> elementy);
     int typ;
     bool jest_klikniety;
-    Vector2i Czy_obok(const Vector2i mouse_position);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();

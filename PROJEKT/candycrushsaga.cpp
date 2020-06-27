@@ -22,11 +22,6 @@ void Cukierek::zamiana()
 
 }
 
-void Cukierek::usun()
-{
-
-}
-
 void Cukierek::wyswietl(vector <Cukierek*> elementy)
 {
     for(int i=0;i<elementy.size();i++){
