@@ -27,36 +27,42 @@ void Cukierek::usun()
 
 }
 
-void Cukierek::wyswietl()
+void Cukierek::wyswietl(vector <Cukierek*> elementy)
 {
-
+    for(int i=0;i<elementy.size();i++){
+        auto pos=elementy[0]->getPosition();
+        cout<<pos.x<<endl<<pos.y<<endl;
+    }
 }
 
-bool ElementSceny::zaznaczcukierek(const Vector2i mouse_position)
+bool ElementSceny::zaznacz(const Vector2i mouse_position)
 {
-//    for(unsigned int i=0;i<elementy.size();i++){
-//        setTexture(znacznik);
-//        auto pos=elementy[i]->getPosition();
-//        setPosition(pos.x,pos.y);
-//    }
-//    for(unsigned int i=0;i<elementy.size();i++){
-        FloatRect bounds = /*elementy[i]->*/getGlobalBounds();
+
+        FloatRect bounds = getGlobalBounds();
         if(mouse_position.x >= bounds.left &&
            mouse_position.x <= bounds.left+bounds.width &&
            mouse_position.y >= bounds.top &&
            mouse_position.y <= bounds.top+bounds.height
                 ){
-//            setTexture(znacznik);
-//            setPosition(bounds.left,bounds.top);
             return true;
         }
         else return false;
 }
 
-bool Cukierek::Czy_obok()
-{
+//Vector2i Cukierek::Czy_obok(const Vector2i mouse_position)
+//{
+//    FloatRect bounds = getGlobalBounds();
+//    if(mouse_position.x >= bounds.left &&
+//       mouse_position.x <= bounds.left+bounds.width &&
+//       mouse_position.y >= bounds.top &&
+//       mouse_position.y <= bounds.top+bounds.height
+//            ){
+//        auto pos=getPosition();
+//                return pos;
+//    }
+//    else return false;
 
-}
+//}
 
 
 

@@ -29,7 +29,6 @@ int main()
     RenderWindow window(sf::VideoMode(1280, 720), "CandyCrushSaga");
     Clock clock;
     Plansza p1;
-Znacznik z1(0,0);
 
     vector <Cukierek*> elementy;
     vector <Znacznik*> znaczniki;
@@ -40,6 +39,9 @@ Znacznik z1(0,0);
     }
     }
     int klikniecia=1;
+    int klik=0;
+    int x,y,x0,y0;
+
 
     while (window.isOpen()) {
 
@@ -59,43 +61,122 @@ Znacznik z1(0,0);
                     cout << "Mouse clicked: " << mouse_pos.x << ", " << mouse_pos.y << endl;
 
 //                    for(unsigned int i=0;i<elementy.size();i++){
-//                        elementy[i]->zaznaczcukierek(mouse_pos);
-//                }
+//                        if(elementy[i]->zaznacz(mouse_pos)){
+//                            klik++;
+//                            cout<<"jest klik"<<endl;
+//                        }
+//                        if(klik==1&&elementy[i]->zaznacz(mouse_pos)){
+//                            auto pos=elementy[i]->getPosition();
+//                            x0=pos.x;
+//                            y0=pos.y;
+//                        }
+//                        if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
+//                            auto pos2=elementy[i]->getPosition();
+//                            x=pos2.x;
+//                            y=pos2.y;
+//                            if(abs(x - x0) + abs(y - y0) == 50){
+//                                cout<<"zamiana"<<endl;
+//                                delete *(znaczniki.begin());
+//                                znaczniki.erase(znaczniki.begin());
+//                                klik=0;
+//                                klikniecia=1;
+
+//                            }
+//                            else klik=1;
+//                        }
+//                    }
 
                     for(unsigned int i=0;i<elementy.size();i++){
-                        if(elementy[i]->zaznaczcukierek(mouse_pos)&&elementy[i]->jest_klikniety==false&&klikniecia==1){
-                            auto pos=elementy[i]->getGlobalBounds();
-                            znaczniki.emplace_back(new Znacznik (pos.left,pos.top));
+                        if(elementy[i]->zaznacz(mouse_pos)){
+                            klik++;
+                            cout<<"jest klik 1"<<endl;
+                        }
+                        if(klik==1&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false/*&&klikniecia==1*/){
+                            auto pos=elementy[i]->getPosition();
+                            x0=pos.x;
+                            y0=pos.y;
+                            znaczniki.emplace_back(new Znacznik (x0,y0));
                             elementy[i]->jest_klikniety=true;
-                            klikniecia=0;
+//                            klikniecia=0;
                             cout<<"nowy"<<endl;
+                            cout<<"jest klik 2"<<endl;
 
                         }
-                        else if(elementy[i]->zaznaczcukierek(mouse_pos)&&elementy[i]->jest_klikniety==true&&klikniecia==0){
-                            klikniecia=1;
+                        if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==true/*&&klikniecia==0*/){
+//                            klikniecia=1;
                             elementy[i]->jest_klikniety=false;
                             cout<<"usun"<<endl;
                             delete *(znaczniki.begin());
                             znaczniki.erase(znaczniki.begin());
+                            klik=0;
                         }
-//                            if(znaczniki[0]->zaznaczcukierek(mouse_pos)/*&&elementy[i]->jest_klikniety==true&&klikniecia==0*/){
+                        else if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
+                            auto pos2=elementy[i]->getPosition();
+                            x=pos2.x;
+                            y=pos2.y;
+                            if(abs(x - x0) + abs(y - y0) == 50){
+                                cout<<"zamiana"<<endl;
+                                delete *(znaczniki.begin());
+                                znaczniki.erase(znaczniki.begin());
+                                klik=0;
+//                                klikniecia=1;
+
+                            }
+                            else klik=1;
+                        }
+
+                    }
+//                    Vector2i mouse_pos = sf::Mouse::getPosition(window);
+//                    cout << "Mouse clicked: " << mouse_pos.x << ", " << mouse_pos.y << endl;
+
+//                    for(unsigned int i=0;i<elementy.size();i++){
+//                        if(elementy[i]->zaznacz(mouse_pos)){
+//                            klik++;
+//                            cout<<"jest klik"<<endl;
+//                        }
+//                        if(klik==1&&elementy[i]->zaznacz(mouse_pos)){
+//                            auto pos=elementy[i]->getPosition();
+//                            x0=pos.x;
+//                            y0=pos.y;
+//                        }
+//                        if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
+//                            auto pos2=elementy[i]->getPosition();
+//                            x=pos2.x;
+//                            y=pos2.y;
+//                            if(abs(x - x0) + abs(y - y0) == 50){
+//                                cout<<"zamiana"<<endl;
+//                                delete *(znaczniki.begin());
+//                                znaczniki.erase(znaczniki.begin());
+//                                klik=0;
+//                                klikniecia=1;
+
+//                            }
+//                            else klik=1;
+//                        }
+//                    }
+
+//                    for(unsigned int i=0;i<elementy.size();i++){
+//                        if(elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false&&klikniecia==1){
+//                            auto pos=elementy[i]->getGlobalBounds();
+//                            znaczniki.emplace_back(new Znacznik (pos.left,pos.top));
+//                            elementy[i]->jest_klikniety=true;
+//                            klikniecia=0;
+//                            cout<<"nowy"<<endl;
+
+//                        }
+//                        else if(elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==true&&klikniecia==0){
 //                            klikniecia=1;
 //                            elementy[i]->jest_klikniety=false;
 //                            cout<<"usun"<<endl;
-//                            delete *(znaczniki);
-//                            znaczniki.erase(znaczniki.begin()+i);
-                        }
+//                            delete *(znaczniki.begin());
+//                            znaczniki.erase(znaczniki.begin());
+//                        }
 
+//                    }
+                }
             }
-        }
-        }
 
-//            if (event.type == Event::MouseButtonPressed) {
-//                if (event.mouseButton.button == Mouse::Right) {
-//                    for(int i=0;i<znaczniki.size();i++){
-//                    delete *(znaczniki.begin());
-//                }
-//            }}
+        }
 
         window.clear(Color::Black);
 
