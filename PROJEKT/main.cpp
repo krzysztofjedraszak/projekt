@@ -29,7 +29,7 @@ int main()
     RenderWindow window(sf::VideoMode(1280, 720), "CandyCrushSaga");
     Clock clock;
     Plansza p1;
-
+Znacznik z1(0,0);
 
     vector <Cukierek*> elementy;
     vector <Znacznik*> znaczniki;
@@ -40,9 +40,6 @@ int main()
     }
     }
     int klikniecia=1;
-
-
-
 
     while (window.isOpen()) {
 
@@ -72,32 +69,34 @@ int main()
                             elementy[i]->jest_klikniety=true;
                             klikniecia=0;
                             cout<<"nowy"<<endl;
-//
-                        }}
-//                        else if(elementy[i]->zaznaczcukierek(mouse_pos)&&elementy[i]->jest_klikniety==true&&klikniecia==0){
+
+                        }
+                        else if(elementy[i]->zaznaczcukierek(mouse_pos)&&elementy[i]->jest_klikniety==true&&klikniecia==0){
+                            klikniecia=1;
+                            elementy[i]->jest_klikniety=false;
+                            cout<<"usun"<<endl;
+                            delete *(znaczniki.begin());
+                            znaczniki.erase(znaczniki.begin());
+                        }
+//                            if(znaczniki[0]->zaznaczcukierek(mouse_pos)/*&&elementy[i]->jest_klikniety==true&&klikniecia==0*/){
 //                            klikniecia=1;
 //                            elementy[i]->jest_klikniety=false;
 //                            cout<<"usun"<<endl;
-//                            delete *(znaczniki);
-//                            znaczniki.erase(znaczniki.begin()+i);
-//                        }
-                            if(znaczniki[0]->zaznaczcukierek(mouse_pos)/*&&elementy[i]->jest_klikniety==true&&klikniecia==0*/){
-                            klikniecia=1;
-//                            elementy[i]->jest_klikniety=false;
-                            cout<<"usun"<<endl;
 //                            delete *(znaczniki);
 //                            znaczniki.erase(znaczniki.begin()+i);
                         }
 
             }
         }
-            if (event.type == Event::MouseButtonPressed) {
-                if (event.mouseButton.button == Mouse::Right) {
-                    for(int i=0;i<znaczniki.size();i++){
-                    delete *(znaczniki.begin());
-                }
-            }}
-}
+        }
+
+//            if (event.type == Event::MouseButtonPressed) {
+//                if (event.mouseButton.button == Mouse::Right) {
+//                    for(int i=0;i<znaczniki.size();i++){
+//                    delete *(znaczniki.begin());
+//                }
+//            }}
+
         window.clear(Color::Black);
 
         window.draw(p1);
