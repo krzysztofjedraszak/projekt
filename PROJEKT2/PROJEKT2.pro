@@ -9,9 +9,11 @@ CONFIG(debug, debug|release){
 } else {
     LIBS += -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
 }
-SOURCES += \
-        candycrushsaga.cpp \
-        main.cpp
 
 HEADERS += \
     candycrushsaga.h
+
+SOURCES += \
+    candycrushsaga.cpp \
+    main.cpp
+

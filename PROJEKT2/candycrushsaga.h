@@ -19,9 +19,10 @@ class Cukierek: public ElementSceny{
 public:
     Cukierek(int x, int y);
     void zamiana();
-    void wyswietl(vector<Cukierek *> elementy);
     int typ;
     bool jest_klikniety;
+    bool match
+    (Cukierek *&c1, Cukierek *&c2);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();

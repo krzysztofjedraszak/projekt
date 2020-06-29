@@ -40,12 +40,13 @@ int main()
     }
     int klik=0;
     int x,y,x0,y0;
-
+    Cukierek* pierwszy_el;
+    Cukierek* drugi_el;
 
     while (window.isOpen()) {
 
-        Cukierek* pierwszy_el;
-        Cukierek* drugi_el;
+        window.setFramerateLimit(60);
+
 //        sf::Time elapsed_ = clock.restart();
 //        float elapsed=elapsed_.asSeconds();
 
@@ -62,10 +63,11 @@ int main()
                     cout << "Mouse clicked: " << mouse_pos.x << ", " << mouse_pos.y << endl;
 
                     for(unsigned int i=0;i<elementy.size();i++){
+
                         if(elementy[i]->zaznacz(mouse_pos)){
                             klik++;
                             cout<<"jest klik poczatkowy"<<endl;
-                            cout<<"KLIK WYNOSI "<<klik<<endl;
+                            cout<<"KLIK w 1 petli WYNOSI "<<klik<<endl;
                         }
                         if(klik==1&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
                             pierwszy_el=elementy[i];
@@ -86,6 +88,8 @@ int main()
                             znaczniki.erase(znaczniki.begin());
                             klik=0;
                             cout<<"KLIK WYNOSI "<<klik<<endl;
+                            pierwszy_el=nullptr;
+                            drugi_el=nullptr;
                         }
                         else if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
                             pierwszy_el->jest_klikniety=false;
@@ -95,7 +99,7 @@ int main()
 
                             x=pos2.x;
                             y=pos2.y;
-                            if(abs(x - x0) + abs(y - y0) == 49){
+                            if(abs(x - x0) + abs(y - y0) == 50){
                                 klik=0;
 //                                cout<<"przed zamiana pierwszy cukierek"<<x0<<"  "<<y0<<endl;
 //                                cout<<"przed zamiana drugi cukierek"<<x<<"  "<<y<<endl;
@@ -108,19 +112,28 @@ int main()
 //                                cout<<"po zamiana pierwszy cukierek"<<pos_pierwszy.x<<"  "<<pos_pierwszy.y<<endl;
 //                                cout<<"po zamiana drugi cukierek"<<pos_drugi.x<<"  "<<pos_drugi.y<<endl;
                                 cout<<"robiona jest zamiana"<<endl;
-                                cout<<"KLIK WYNOSI "<<klik<<endl;                                
+                                cout<<"KLIK po zamianie WYNOSI "<<klik<<endl;
                                 delete *(znaczniki.begin());
                                 znaczniki.erase(znaczniki.begin());
                                 cout<<endl<<endl<<endl;
+                                pierwszy_el=nullptr;
+                                drugi_el=nullptr;
+
+
+
+
                             }
-                            else klik=1;
-                            cout<<"KLIK WYNOSI "<<klik<<endl;
+                            else {klik=1;
+                            cout<<"KLIK po else WYNOSI "<<klik<<endl;}
                         }
                     }
                 }
             }
-
         }
+
+
+
+
 
         window.clear(Color::Black);
 
@@ -131,7 +144,30 @@ int main()
         for(auto &z:znaczniki){
             window.draw(*z);
         }
+//        Time time =seconds( 1 );
+//                sleep( time );
+////                    koniec przycisniecia myszki
+//                    for(int i=0;i<80;i++){
 
+//                    if(elementy[i+10]->match(elementy[i],elementy[i+20])){
+//                        auto pos1=elementy[i]->getPosition();
+//        //                auto pos2=elementy[i+10]->getPosition();
+//        //                auto pos3=elementy[i+20]->getPosition();
+//                        cout<<"dziala"<<endl;
+//                        delete *(elementy.begin()+i);
+//                        delete *(elementy.begin()+i+10);
+//                        delete *(elementy.begin()+i+20);
+//                        elementy.erase(elementy.begin()+i);
+//                        elementy.erase(elementy.begin()+i+10);
+//                        elementy.erase(elementy.begin()+i+20);
+
+//sleep(time);
+//                        for(int i=0;i<3;i++){
+//                            new Cukierek(pos1.x,pos1.y+50*i);
+//                            sleep(time);
+//                        }
+//                    }
+//                    }
 
         window.display();
 

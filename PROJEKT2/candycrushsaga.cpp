@@ -22,12 +22,12 @@ void Cukierek::zamiana()
 
 }
 
-void Cukierek::wyswietl(vector <Cukierek*> elementy)
+bool Cukierek::match(Cukierek* &c1, Cukierek* &c2)
 {
-    for(int i=0;i<elementy.size();i++){
-        auto pos=elementy[0]->getPosition();
-        cout<<pos.x<<endl<<pos.y<<endl;
+    if(typ==c1->typ&&typ==c2->typ){
+        return 1;
     }
+    else return 0;
 }
 
 bool ElementSceny::zaznacz(const Vector2i mouse_position)
