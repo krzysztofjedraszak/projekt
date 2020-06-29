@@ -95,7 +95,7 @@ int main()
 
                             x=pos2.x;
                             y=pos2.y;
-                            if(abs(x - x0) + abs(y - y0) == 50){
+                            if(abs(x - x0) + abs(y - y0) == 49){
                                 klik=0;
 //                                cout<<"przed zamiana pierwszy cukierek"<<x0<<"  "<<y0<<endl;
 //                                cout<<"przed zamiana drugi cukierek"<<x<<"  "<<y<<endl;
