@@ -42,6 +42,7 @@ int main()
     int x,y,x0,y0;
     Cukierek* pierwszy_el;
     Cukierek* drugi_el;
+    Time time =seconds( 1 );
 
     while (window.isOpen()) {
 
@@ -66,8 +67,6 @@ int main()
 
                         if(elementy[i]->zaznacz(mouse_pos)){
                             klik++;
-                            cout<<"jest klik poczatkowy"<<endl;
-                            cout<<"KLIK w 1 petli WYNOSI "<<klik<<endl;
                         }
                         if(klik==1&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
                             pierwszy_el=elementy[i];
@@ -76,55 +75,38 @@ int main()
                             y0=pos.y;
                             znaczniki.emplace_back(new Znacznik (x0,y0));
                             pierwszy_el->jest_klikniety=true;
-                            cout<<"tworze nowy kursor"<<endl;
-//                            cout<<"jest klik 2"<<endl;
-                            cout<<"KLIK WYNOSI "<<klik<<endl;
-
                         }
                         if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==true){
                             pierwszy_el->jest_klikniety=false;
-                            cout<<"usun"<<endl;
                             delete *(znaczniki.begin());
                             znaczniki.erase(znaczniki.begin());
                             klik=0;
-                            cout<<"KLIK WYNOSI "<<klik<<endl;
                             pierwszy_el=nullptr;
                             drugi_el=nullptr;
                         }
                         else if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
                             pierwszy_el->jest_klikniety=false;
-//tak
                             drugi_el=elementy[i];
+                            drugi_el->jest_klikniety=false;
                             auto pos2=drugi_el->getPosition();
-
                             x=pos2.x;
                             y=pos2.y;
                             if(abs(x - x0) + abs(y - y0) == 50){
                                 klik=0;
-//                                cout<<"przed zamiana pierwszy cukierek"<<x0<<"  "<<y0<<endl;
-//                                cout<<"przed zamiana drugi cukierek"<<x<<"  "<<y<<endl;
-
-                                swap(pierwszy_el,drugi_el);
+                                swap(*pierwszy_el,*drugi_el);
                                 auto pos_drugi=drugi_el->getPosition();
                                 auto pos_pierwszy=pierwszy_el->getPosition();
                                 drugi_el->setPosition(pos_pierwszy.x,pos_pierwszy.y);
                                 pierwszy_el->setPosition(pos_drugi.x,pos_drugi.y);
-//                                cout<<"po zamiana pierwszy cukierek"<<pos_pierwszy.x<<"  "<<pos_pierwszy.y<<endl;
-//                                cout<<"po zamiana drugi cukierek"<<pos_drugi.x<<"  "<<pos_drugi.y<<endl;
-                                cout<<"robiona jest zamiana"<<endl;
-                                cout<<"KLIK po zamianie WYNOSI "<<klik<<endl;
                                 delete *(znaczniki.begin());
                                 znaczniki.erase(znaczniki.begin());
                                 cout<<endl<<endl<<endl;
                                 pierwszy_el=nullptr;
                                 drugi_el=nullptr;
-
-
-
-
+                                break;
                             }
                             else {klik=1;
-                            cout<<"KLIK po else WYNOSI "<<klik<<endl;}
+                            }
                         }
                     }
                 }
@@ -135,6 +117,30 @@ int main()
 
 
 
+
+        for(int i=0;i<80;i++){
+            if(elementy[i+10]->match(elementy[i],elementy[i+20])){
+                auto pos1=elementy[i]->getPosition();
+                auto pos2=elementy[i+10]->getPosition();
+                auto pos3=elementy[i+20]->getPosition();
+                cout<<"dziala"<<endl;
+
+                delete *(elementy.begin()+i);
+                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
+                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
+
+                delete *(elementy.begin()+i+10);
+                elementy.erase(elementy.begin()+i+10);cout<<elementy.size()<<endl;
+                elementy.insert(elementy.begin()+i+10,new Cukierek(pos2.x,pos2.y));
+
+                delete *(elementy.begin()+i+20);
+                elementy.erase(elementy.begin()+i+20);cout<<elementy.size()<<endl;
+                elementy.insert(elementy.begin()+i+20,new Cukierek(pos3.x,pos3.y));
+
+
+
+            }
+        }
         window.clear(Color::Black);
 
         window.draw(p1);
@@ -144,30 +150,9 @@ int main()
         for(auto &z:znaczniki){
             window.draw(*z);
         }
-//        Time time =seconds( 1 );
+
 //                sleep( time );
-////                    koniec przycisniecia myszki
-//                    for(int i=0;i<80;i++){
-
-//                    if(elementy[i+10]->match(elementy[i],elementy[i+20])){
-//                        auto pos1=elementy[i]->getPosition();
-//        //                auto pos2=elementy[i+10]->getPosition();
-//        //                auto pos3=elementy[i+20]->getPosition();
-//                        cout<<"dziala"<<endl;
-//                        delete *(elementy.begin()+i);
-//                        delete *(elementy.begin()+i+10);
-//                        delete *(elementy.begin()+i+20);
-//                        elementy.erase(elementy.begin()+i);
-//                        elementy.erase(elementy.begin()+i+10);
-//                        elementy.erase(elementy.begin()+i+20);
-
-//sleep(time);
-//                        for(int i=0;i<3;i++){
-//                            new Cukierek(pos1.x,pos1.y+50*i);
-//                            sleep(time);
-//                        }
-//                    }
-//                    }
+//                    koniec przycisniecia myszki 52,62,72
 
         window.display();
 
