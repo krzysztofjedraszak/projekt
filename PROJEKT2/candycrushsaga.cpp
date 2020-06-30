@@ -22,9 +22,40 @@ void Cukierek::zamiana()
 
 }
 
-bool Cukierek::match(Cukierek* &c1, Cukierek* &c2)
+bool Cukierek::match3(Cukierek* &c1, Cukierek* &c2)
 {
-    if(typ==c1->typ&&typ==c2->typ){
+    auto pos=getPosition();
+    auto pos1=c1->getPosition();
+    auto pos2=c2->getPosition();
+    if((typ==c1->typ&&typ==c2->typ&&pos.x==pos1.x&&pos.x==pos2.x)||
+           (typ==c1->typ&&typ==c2->typ&&pos.y==pos1.y&&pos.y==pos2.y)){
+        return 1;
+    }
+    else return 0;
+}
+
+bool Cukierek::match4(Cukierek *&c1, Cukierek *&c2, Cukierek *&c3)
+{
+    auto pos=getPosition();
+    auto pos1=c1->getPosition();
+    auto pos2=c2->getPosition();
+    auto pos3=c2->getPosition();
+    if((typ==c1->typ&&typ==c2->typ&&typ==c3->typ&&pos.x==pos1.x&&pos.x==pos2.x&&pos.x==pos3.x)||
+       (typ==c1->typ&&typ==c2->typ&&typ==c3->typ&&pos.y==pos1.y&&pos.y==pos2.y&&pos.y==pos3.y)){
+        return 1;
+    }
+    else return 0;
+}
+
+bool Cukierek::match5(Cukierek *&c1, Cukierek *&c2, Cukierek *&c3, Cukierek *&c4)
+{
+    auto pos=getPosition();
+    auto pos1=c1->getPosition();
+    auto pos2=c2->getPosition();
+    auto pos3=c2->getPosition();
+    auto pos4=c2->getPosition();
+    if((typ==c1->typ&&typ==c2->typ&&typ==c3->typ&&typ==c4->typ&&pos.x==pos1.x&&pos.x==pos2.x&&pos.x==pos3.x&&pos.x==pos4.x)||
+       (typ==c1->typ&&typ==c2->typ&&typ==c3->typ&&typ==c4->typ&&pos.y==pos1.y&&pos.y==pos2.y&&pos.y==pos3.y&&pos.y==pos4.y)){
         return 1;
     }
     else return 0;

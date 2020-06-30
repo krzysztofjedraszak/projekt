@@ -21,8 +21,9 @@ public:
     void zamiana();
     int typ;
     bool jest_klikniety;
-    bool match
-    (Cukierek *&c1, Cukierek *&c2);
+    bool match3(Cukierek *&c1, Cukierek *&c2);
+    bool match4(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3);
+    bool match5(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3,Cukierek *&c4);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();
