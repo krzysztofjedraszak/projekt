@@ -29,6 +29,7 @@ int main()
     RenderWindow window(sf::VideoMode(1280, 720), "CandyCrushSaga");
     Clock clock;
     Plansza p1;
+    ElementSceny scena;
 
     vector <Cukierek*> elementy;
     vector <Znacznik*> znaczniki;
@@ -115,153 +116,55 @@ int main()
 
         for(int i=0;i<60;i++){
             if(elementy[i+10]->match5(elementy[i],elementy[i+20],elementy[i+30],elementy[i+40])){
-                auto pos1=elementy[i]->getPosition();
-                auto pos2=elementy[i+10]->getPosition();
-                auto pos3=elementy[i+20]->getPosition();
-                auto pos4=elementy[i+30]->getPosition();
-                auto pos5=elementy[i+40]->getPosition();
-                cout<<"dziala 5 pionowo"<<endl;
-
-                delete *(elementy.begin()+i);
-                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-                delete *(elementy.begin()+i+10);
-                elementy.erase(elementy.begin()+i+10);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+10,new Cukierek(pos2.x,pos2.y));
-
-                delete *(elementy.begin()+i+20);
-                elementy.erase(elementy.begin()+i+20);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+20,new Cukierek(pos3.x,pos3.y));
-
-                delete *(elementy.begin()+i+30);
-                elementy.erase(elementy.begin()+i+30);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+30,new Cukierek(pos4.x,pos4.y));
-
-                delete *(elementy.begin()+i+40);
-                elementy.erase(elementy.begin()+i+40);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+40,new Cukierek(pos5.x,pos5.y));
+                elementy[i+1]->usun5(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy);
+                scena.punkty+=50;
+                scena.czy_zmiana_wyniku=true;
+        //5 pionowo
             }
         }
         for(int i=0;i<70;i++){
             if(elementy[i+10]->match4(elementy[i],elementy[i+20],elementy[i+30])){
-                auto pos1=elementy[i]->getPosition();
-                auto pos2=elementy[i+10]->getPosition();
-                auto pos3=elementy[i+20]->getPosition();
-                auto pos4=elementy[i+30]->getPosition();
-                cout<<"dziala 4 pionowo"<<endl;
-
-                delete *(elementy.begin()+i);
-                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-                delete *(elementy.begin()+i+10);
-                elementy.erase(elementy.begin()+i+10);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+10,new Cukierek(pos2.x,pos2.y));
-
-                delete *(elementy.begin()+i+20);
-                elementy.erase(elementy.begin()+i+20);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+20,new Cukierek(pos3.x,pos3.y));
-
-                delete *(elementy.begin()+i+30);
-                elementy.erase(elementy.begin()+i+30);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+30,new Cukierek(pos4.x,pos4.y));
+                elementy[i+10]->usun4(i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy);
+                scena.punkty+=40;
+                scena.czy_zmiana_wyniku=true;
+        //4 pionowo
             }
         }
         for(int i=0;i<80;i++){
             if(elementy[i+10]->match3(elementy[i],elementy[i+20])){
-                auto pos1=elementy[i]->getPosition();
-                auto pos2=elementy[i+10]->getPosition();
-                auto pos3=elementy[i+20]->getPosition();
-                cout<<"dziala 3 pionowo"<<endl;
-
-                delete *(elementy.begin()+i);
-                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-                delete *(elementy.begin()+i+10);
-                elementy.erase(elementy.begin()+i+10);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+10,new Cukierek(pos2.x,pos2.y));
-
-                delete *(elementy.begin()+i+20);
-                elementy.erase(elementy.begin()+i+20);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+20,new Cukierek(pos3.x,pos3.y));
+                elementy[i+10]->usun3(i+10,elementy[i],i,elementy[i+20],i+20,elementy);
+                scena.punkty+=30;
+                scena.czy_zmiana_wyniku=true;
+        //3 pionowo
             }
         }
         for(int i=0;i<96;i++){
             if(elementy[i+1]->match5(elementy[i],elementy[i+2],elementy[i+3],elementy[i+4])){
-                auto pos1=elementy[i]->getPosition();
-                auto pos2=elementy[i+1]->getPosition();
-                auto pos3=elementy[i+2]->getPosition();
-                auto pos4=elementy[i+3]->getPosition();
-                auto pos5=elementy[i+4]->getPosition();
-                cout<<"dziala 5 poziomo"<<endl;
-
-                delete *(elementy.begin()+i);
-                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-                delete *(elementy.begin()+i+1);
-                elementy.erase(elementy.begin()+i+1);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+1,new Cukierek(pos2.x,pos2.y));
-
-                delete *(elementy.begin()+i+2);
-                elementy.erase(elementy.begin()+i+2);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+2,new Cukierek(pos3.x,pos3.y));
-
-                delete *(elementy.begin()+i+3);
-                elementy.erase(elementy.begin()+i+3);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+3,new Cukierek(pos4.x,pos4.y));
-
-                delete *(elementy.begin()+i+4);
-                elementy.erase(elementy.begin()+i+4);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+4,new Cukierek(pos5.x,pos5.y));
+                elementy[i+1]->usun5(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy);
+                scena.punkty+=50;
+                scena.czy_zmiana_wyniku=true;
+        //5 poziomo
             }
         }
         for(int i=0;i<97;i++){
             if(elementy[i+1]->match4(elementy[i],elementy[i+2],elementy[i+3])){
-                auto pos1=elementy[i]->getPosition();
-                auto pos2=elementy[i+1]->getPosition();
-                auto pos3=elementy[i+2]->getPosition();
-                auto pos4=elementy[i+3]->getPosition();
-                cout<<"dziala 4 poziomo"<<endl;
-
-                delete *(elementy.begin()+i);
-                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-                delete *(elementy.begin()+i+1);
-                elementy.erase(elementy.begin()+i+1);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+1,new Cukierek(pos2.x,pos2.y));
-
-                delete *(elementy.begin()+i+2);
-                elementy.erase(elementy.begin()+i+2);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+2,new Cukierek(pos3.x,pos3.y));
-
-                delete *(elementy.begin()+i+3);
-                elementy.erase(elementy.begin()+i+3);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+3,new Cukierek(pos4.x,pos4.y));
+                elementy[i+1]->usun4(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy);
+                scena.punkty+=40;
+                scena.czy_zmiana_wyniku=true;
+        //4 poziomo
             }
         }
         for(int i=0;i<98;i++){
             if(elementy[i+1]->match3(elementy[i],elementy[i+2])){
-                auto pos1=elementy[i]->getPosition();
-                auto pos2=elementy[i+1]->getPosition();
-                auto pos3=elementy[i+2]->getPosition();
-                cout<<"dziala 3 poziomo"<<endl;
-
-                delete *(elementy.begin()+i);
-                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-                delete *(elementy.begin()+i+1);
-                elementy.erase(elementy.begin()+i+1);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+1,new Cukierek(pos2.x,pos2.y));
-
-                delete *(elementy.begin()+i+2);
-                elementy.erase(elementy.begin()+i+2);cout<<elementy.size()<<endl;
-                elementy.insert(elementy.begin()+i+2,new Cukierek(pos3.x,pos3.y));
+                elementy[i+1]->usun3(i+1,elementy[i],i,elementy[i+2],i+2,elementy);
+                scena.punkty+=30;
+                scena.czy_zmiana_wyniku=true;
+        //3 poziomo
             }
+        }
+        if(scena.czy_zmiana_wyniku==true){
+        cout<<scena.punkty<<endl;
+        scena.czy_zmiana_wyniku=false;
         }
 
         window.clear(Color::Black);
@@ -274,8 +177,6 @@ int main()
             window.draw(*z);
         }
 
-//                sleep( time );
-//                    koniec przycisniecia myszki 52,62,72
 
         window.display();
 
@@ -287,3 +188,24 @@ int main()
     return 0;
 
 }
+//3 poziomo
+//        for(int i=0;i<98;i++){
+//            if(elementy[i+1]->match3(elementy[i],elementy[i+2])){
+//                auto pos1=elementy[i]->getPosition();
+//                auto pos2=elementy[i+1]->getPosition();
+//                auto pos3=elementy[i+2]->getPosition();
+//                cout<<"dziala 3 poziomo"<<endl;
+
+//                delete *(elementy.begin()+i);
+//                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
+//                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
+
+//                delete *(elementy.begin()+i+1);
+//                elementy.erase(elementy.begin()+i+1);cout<<elementy.size()<<endl;
+//                elementy.insert(elementy.begin()+i+1,new Cukierek(pos2.x,pos2.y));
+
+//                delete *(elementy.begin()+i+2);
+//                elementy.erase(elementy.begin()+i+2);cout<<elementy.size()<<endl;
+//                elementy.insert(elementy.begin()+i+2,new Cukierek(pos3.x,pos3.y));
+//            }
+//        }

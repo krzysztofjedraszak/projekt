@@ -11,6 +11,8 @@ class ElementSceny: public Sprite{
 public:
     ElementSceny();
     bool zaznacz(const Vector2i mouse_position);
+    int punkty;
+    bool czy_zmiana_wyniku;
 };
 
 class Cukierek: public ElementSceny{
@@ -24,6 +26,9 @@ public:
     bool match3(Cukierek *&c1, Cukierek *&c2);
     bool match4(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3);
     bool match5(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3,Cukierek *&c4);
+    void usun3(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, vector <Cukierek*> elementy);
+    void usun4(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, Cukierek *&c3, int val3, vector <Cukierek*> elementy);
+    void usun5(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2,Cukierek *&c3,int val3,Cukierek *&c4,int val4, vector<Cukierek *> elementy);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();
