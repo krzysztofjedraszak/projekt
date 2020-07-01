@@ -3,6 +3,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <sstream>
+#include <string>
 
 using namespace std;
 using namespace sf;
@@ -28,7 +30,7 @@ public:
     bool match5(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3,Cukierek *&c4);
     void usun3(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, vector <Cukierek*> elementy);
     void usun4(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, Cukierek *&c3, int val3, vector <Cukierek*> elementy);
-    void usun5(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2,Cukierek *&c3,int val3,Cukierek *&c4,int val4, vector<Cukierek *> elementy);
+    void usun5(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, Cukierek *&c3,int val3, Cukierek *&c4,int val4, vector<Cukierek *> elementy);
 };
 class NajlepszyWynik: public ElementSceny{
     NajlepszyWynik();
@@ -36,8 +38,10 @@ class NajlepszyWynik: public ElementSceny{
     void wczytaj();
 };
 class AktualnyWynik: public ElementSceny{
+    Texture cyfry;
+public:
     AktualnyWynik();
-    void wyswietl();
+    void wyswietl(const int &akt);
 };
 class Plansza: public ElementSceny{
     Texture plansza;

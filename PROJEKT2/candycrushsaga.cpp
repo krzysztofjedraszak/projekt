@@ -188,13 +188,37 @@ void NajlepszyWynik::wczytaj()
 
 AktualnyWynik::AktualnyWynik()
 {
+//    if (!cyfry.loadFromFile("grafika/cyfry.png")) {
+//        std::cerr << "Could not load texture" << std::endl;
+//    }
+}
+
+void AktualnyWynik::wyswietl(const int& akt)
+{//125
+//    int y=0;
+//    int cyfra;
+//    int x=akt;
+//    while (x!=0) {
+//        cyfra = x % 10;//5
+//        x = x /10;//
+//        y = 10*y + cyfra;
+//        cout<<y;
+//    }
+    stringstream ss;
+    ss<<akt;
+    string str=ss.str();
+//    cout<<str[0]<<endl;
+//    cout<<str[1]<<endl;
+//    cout<<str.length()<<endl;
+    for(unsigned int i=0;i<str.length();++i){
+        char r=str[i];
+        int s=r - '0';
+        cout<<s<<endl;
+    }
 
 }
 
-void AktualnyWynik::wyswietl()
-{
 
-}
 
 Plansza::Plansza()
 {

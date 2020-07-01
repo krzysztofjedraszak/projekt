@@ -4,6 +4,8 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <sstream>
+#include <string>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "candycrushsaga.h"
@@ -30,9 +32,11 @@ int main()
     Clock clock;
     Plansza p1;
     ElementSceny scena;
+    AktualnyWynik akt;
 
     vector <Cukierek*> elementy;
     vector <Znacznik*> znaczniki;
+    vector <AktualnyWynik*> wyniki;
 
     for(int j=0;j<10;j++){
         for(int i=0;i<10;i++){
@@ -43,7 +47,7 @@ int main()
     int x,y,x0,y0;
     Cukierek* pierwszy_el;
     Cukierek* drugi_el;
-    Time time =seconds( 1 );
+//    Time time =seconds( 1 );
 
     while (window.isOpen()) {
 
@@ -163,8 +167,9 @@ int main()
             }
         }
         if(scena.czy_zmiana_wyniku==true){
-        cout<<scena.punkty<<endl;
+//        cout<<scena.punkty<<endl;
         scena.czy_zmiana_wyniku=false;
+        akt.wyswietl(scena.punkty);
         }
 
         window.clear(Color::Black);
