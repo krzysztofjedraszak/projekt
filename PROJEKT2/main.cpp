@@ -6,6 +6,8 @@
 #include <memory>
 #include <sstream>
 #include <string>
+#include <fstream>
+#include <cmath>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "candycrushsaga.h"
@@ -33,10 +35,16 @@ int main()
     Plansza p1;
     ElementSceny scena;
     AktualnyWynik akt;
+    NajlepszyWynik naj;
+    Zegar zegar;
+    auto wczytane=naj.wczytaj();
 
     vector <Cukierek*> elementy;
     vector <Znacznik*> znaczniki;
     vector <AktualnyWynik*> wyniki;
+    vector <NajlepszyWynik*> najlepsze;
+    vector <Zegar*> zegary;
+    naj.wyswietl(wczytane,najlepsze);
 
     for(int j=0;j<10;j++){
         for(int i=0;i<10;i++){
@@ -47,7 +55,6 @@ int main()
     int x,y,x0,y0;
     Cukierek* pierwszy_el;
     Cukierek* drugi_el;
-//    Time time =seconds( 1 );
 
     while (window.isOpen()) {
 
@@ -167,10 +174,14 @@ int main()
             }
         }
         if(scena.czy_zmiana_wyniku==true){
-//        cout<<scena.punkty<<endl;
-        scena.czy_zmiana_wyniku=false;
-        akt.wyswietl(scena.punkty);
+            scena.czy_zmiana_wyniku=false;
+            akt.wyswietl(scena.punkty,wyniki);
+            naj.zapisz(scena.porownanie(scena.punkty,wczytane,naj,najlepsze));
         }
+        zegar.odliczanie(clock,zegary);
+
+
+
 
         window.clear(Color::Black);
 
@@ -181,7 +192,15 @@ int main()
         for(auto &z:znaczniki){
             window.draw(*z);
         }
-
+        for(auto &w:wyniki){
+            window.draw(*w);
+        }
+        for(auto &n:najlepsze){
+            window.draw(*n);
+        }
+        for(auto &z:zegary){
+            window.draw(*z);
+        }
 
         window.display();
 
