@@ -6,8 +6,33 @@ ElementSceny::ElementSceny()
     czy_zmiana_wyniku=false;
 }
 
-Cukierek::Cukierek(int x,int y)
+//Cukierek::Cukierek(int x, int y, int z)
+//{
+//    if(z==4){
+//        if (!specjalne.loadFromFile("grafika/specjalne.png")) {
+//            std::cerr << "Could not load texture" << std::endl;
+//        }
+//        typ=44;
+//        setTexture(specjalne);
+//        setTextureRect(IntRect(196,0,49,49));
+//        setPosition(x,y);
+//        jest_klikniety=false;
+//    }
+//}
+
+Cukierek::Cukierek(int x,int y,int z)
 {
+    if(z==4){
+        if (!specjalne.loadFromFile("grafika/specjalne.png")) {
+            std::cerr << "Could not load texture" << std::endl;
+        }
+//        typ=44;
+        setTexture(specjalne);
+        setTextureRect(IntRect(196,0,49,49));
+        setPosition(x,y);
+        jest_klikniety=false;
+    }
+    else{
     if (!cukierek.loadFromFile("grafika/cukierki.png")) {
         std::cerr << "Could not load texture" << std::endl;
     }
@@ -16,6 +41,7 @@ Cukierek::Cukierek(int x,int y)
     setTextureRect(IntRect(typ*49,0,49,49));
     setPosition(x,y);
     jest_klikniety=false;
+    }
 }
 //152x104 poczatek pola
 void Cukierek::zamiana()
@@ -70,15 +96,15 @@ void Cukierek::usun3(int val,Cukierek*& c1,int val1,Cukierek*& c2,int val2,vecto
 
     delete *(elementy.begin()+val1);
     elementy.erase(elementy.begin()+val1);
-    elementy.insert(elementy.begin()+val1,new Cukierek(pos1.x,pos1.y));
+    elementy.insert(elementy.begin()+val1,new Cukierek(pos1.x,pos1.y,0));
 
     delete *(elementy.begin()+val);
     elementy.erase(elementy.begin()+val);
-    elementy.insert(elementy.begin()+val,new Cukierek(pos.x,pos.y));
+    elementy.insert(elementy.begin()+val,new Cukierek(pos.x,pos.y,0));
 
     delete *(elementy.begin()+val2);
     elementy.erase(elementy.begin()+val2);
-    elementy.insert(elementy.begin()+val2,new Cukierek(pos2.x,pos2.y));
+    elementy.insert(elementy.begin()+val2,new Cukierek(pos2.x,pos2.y,0));
 
     punkty=+30;
 }
@@ -92,19 +118,19 @@ void Cukierek::usun4(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2,C
 
     delete *(elementy.begin()+val1);
     elementy.erase(elementy.begin()+val1);
-    elementy.insert(elementy.begin()+val1,new Cukierek(pos1.x,pos1.y));
+    elementy.insert(elementy.begin()+val1,new Cukierek(pos1.x,pos1.y,0));
 
     delete *(elementy.begin()+val);
     elementy.erase(elementy.begin()+val);
-    elementy.insert(elementy.begin()+val,new Cukierek(pos.x,pos.y));
+    elementy.insert(elementy.begin()+val,new Cukierek(pos.x,pos.y,0));
 
     delete *(elementy.begin()+val2);
     elementy.erase(elementy.begin()+val2);
-    elementy.insert(elementy.begin()+val2,new Cukierek(pos2.x,pos2.y));
+    elementy.insert(elementy.begin()+val2,new Cukierek(pos2.x,pos2.y,0));
 
     delete *(elementy.begin()+val3);
     elementy.erase(elementy.begin()+val3);
-    elementy.insert(elementy.begin()+val3,new Cukierek(pos3.x,pos3.y));
+    elementy.insert(elementy.begin()+val3,new Cukierek(pos3.x,pos3.y,0));
 
     punkty=+40;
 }
@@ -119,23 +145,23 @@ void Cukierek::usun5(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2,C
 
     delete *(elementy.begin()+val1);
     elementy.erase(elementy.begin()+val1);
-    elementy.insert(elementy.begin()+val1,new Cukierek(pos1.x,pos1.y));
+    elementy.insert(elementy.begin()+val1,new Cukierek(pos1.x,pos1.y,0));
 
     delete *(elementy.begin()+val);
     elementy.erase(elementy.begin()+val);
-    elementy.insert(elementy.begin()+val,new Cukierek(pos.x,pos.y));
+    elementy.insert(elementy.begin()+val,new Cukierek(pos.x,pos.y,0));
 
     delete *(elementy.begin()+val2);
     elementy.erase(elementy.begin()+val2);
-    elementy.insert(elementy.begin()+val2,new Cukierek(pos2.x,pos2.y));
+    elementy.insert(elementy.begin()+val2,new Cukierek(pos2.x,pos2.y,0));
 
     delete *(elementy.begin()+val3);
     elementy.erase(elementy.begin()+val3);
-    elementy.insert(elementy.begin()+val3,new Cukierek(pos3.x,pos3.y));
+    elementy.insert(elementy.begin()+val3,new Cukierek(pos3.x,pos3.y,0));
 
     delete *(elementy.begin()+val4);
     elementy.erase(elementy.begin()+val4);
-    elementy.insert(elementy.begin()+val4,new Cukierek(pos4.x,pos4.y));
+    elementy.insert(elementy.begin()+val4,new Cukierek(pos4.x,pos4.y,0));
 
     punkty=+50;
 }
@@ -292,7 +318,6 @@ void Zegar::odliczanie(Clock &clk,vector <Zegar*> &zegary)
     czas=czas-z;
     stringstream ss;
     ss<<czas;
-    cout<<czas<<endl;
     string str=ss.str();
     if(czas>=100){
         for(unsigned int i=0;i<3;i++){

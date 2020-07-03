@@ -22,9 +22,10 @@ public:
 
 class Cukierek: public ElementSceny{
     Texture cukierek;
-
+    Texture specjalne;
 public:
-    Cukierek(int x, int y);
+//    Cukierek(int x,int y,int z);
+    Cukierek(int x, int y, int z);
     void zamiana();
     int typ;
     bool jest_klikniety;

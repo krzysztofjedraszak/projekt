@@ -35,13 +35,17 @@ int main()
 
     for(int j=0;j<10;j++){
         for(int i=0;i<10;i++){
-            elementy.emplace_back(new Cukierek(154+i*50,104+j*50));
+            elementy.emplace_back(new Cukierek(154+i*50,104+j*50,0));
         }
     }
     int klik=0;
     int x,y,x0,y0;
     Cukierek* pierwszy_el;
     Cukierek* drugi_el;
+
+
+//    Cukierek w1(10,10,4);
+//    Cukierek w2(100,10,5);
 
     while (window.isOpen()) {
 
@@ -88,6 +92,8 @@ int main()
                             drugi_el=elementy[i];
                             drugi_el->jest_klikniety=false;
                             auto pos2=drugi_el->getPosition();
+//                            cout<<x0<<"  "<<y0<< endl;
+//                            cout<<pos2.x<<"  "<<pos2.y<<endl;
                             x=pos2.x;
                             y=pos2.y;
                             if(abs(x - x0) + abs(y - y0) == 50){
@@ -97,11 +103,14 @@ int main()
                                 auto pos_pierwszy=pierwszy_el->getPosition();
                                 drugi_el->setPosition(pos_pierwszy.x,pos_pierwszy.y);
                                 pierwszy_el->setPosition(pos_drugi.x,pos_drugi.y);
+//                                cout<<pos_pierwszy.x<<"  "<<pos_pierwszy.y<<endl;
+//                                cout<<pos_drugi.x<<"  "<<pos_drugi.y<<endl;
                                 delete *(znaczniki.begin());
                                 znaczniki.erase(znaczniki.begin());
                                 cout<<endl<<endl<<endl;
                                 pierwszy_el=nullptr;
                                 drugi_el=nullptr;
+                                cout<<"zamiana"<<endl;
                                 break;
                             }
                             else {klik=1;
@@ -188,6 +197,8 @@ int main()
         for(auto &z:zegary){
             window.draw(*z);
         }
+//        window.draw(w1);
+//        window.draw(w2);
 
         window.display();
 
