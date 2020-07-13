@@ -11,9 +11,21 @@ CONFIG(debug, debug|release){
 }
 
 HEADERS += \
-    candycrushsaga.h
+    aktualny_wynik.h \
+    cukierek.h \
+    elementsceny.h \
+    najlepszy_wynik.h \
+    plansza.h \
+    zegar.h \
+    znacznik.h
 
 SOURCES += \
-    candycrushsaga.cpp \
-    main.cpp
+    aktualny_wynik.cpp \
+    cukierek.cpp \
+    elementsceny.cpp \
+    main.cpp \
+    najlepszy_wynik.cpp \
+    plansza.cpp \
+    zegar.cpp \
+    znacznik.cpp
 

@@ -10,7 +10,13 @@
 #include <cmath>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include "candycrushsaga.h"
+#include "elementsceny.h"
+#include "aktualny_wynik.h"
+#include "cukierek.h"
+#include "najlepszy_wynik.h"
+#include "plansza.h"
+#include "zegar.h"
+#include "znacznik.h"
 
 using namespace std;
 using namespace sf;
@@ -122,31 +128,39 @@ int main()
         }
 
         for(int i=0;i<60;i++){
-            if(elementy[i+10]->match5(elementy[i],elementy[i+20],elementy[i+30],elementy[i+40])){
-                elementy[i+1]->usun5(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy);
+            if(scena.match(elementy[i],elementy[i+10],elementy[i+20],elementy[i+30],elementy[i+40],5)){
+                elementy[i+10]->usun5(i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy[i+40],i+40,elementy);
                 scena.punkty+=50;
                 scena.czy_zmiana_wyniku=true;
         //5 pionowo
             }
         }
         for(int i=0;i<70;i++){
-            if(elementy[i+10]->match4(elementy[i],elementy[i+20],elementy[i+30])){
+            if(scena.match(elementy[i],elementy[i+10],elementy[i+20],elementy[i+30],elementy[i+40],4)){
                 elementy[i+10]->usun4(i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy);
                 scena.punkty+=40;
                 scena.czy_zmiana_wyniku=true;
         //4 pionowo
             }
         }
+//        for(int i=0;i<80;i++){
+//            if(elementy[i+10]->match3(elementy[i],elementy[i+20])){
+//                elementy[i+10]->usun3(i+10,elementy[i],i,elementy[i+20],i+20,elementy);
+//                scena.punkty+=30;
+//                scena.czy_zmiana_wyniku=true;
+//        //3 pionowo
+//            }
+//        }
         for(int i=0;i<80;i++){
-            if(elementy[i+10]->match3(elementy[i],elementy[i+20])){
+            if(scena.match(elementy[i],elementy[i+10],elementy[i+20],elementy[i+30],elementy[i+40],3)){
                 elementy[i+10]->usun3(i+10,elementy[i],i,elementy[i+20],i+20,elementy);
                 scena.punkty+=30;
                 scena.czy_zmiana_wyniku=true;
-        //3 pionowo
+                //3 pionowo
             }
         }
         for(int i=0;i<96;i++){
-            if(elementy[i+1]->match5(elementy[i],elementy[i+2],elementy[i+3],elementy[i+4])){
+            if(scena.match(elementy[i],elementy[i+1],elementy[i+2],elementy[i+3],elementy[i+4],5)){
                 elementy[i+1]->usun5(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy);
                 scena.punkty+=50;
                 scena.czy_zmiana_wyniku=true;
@@ -154,7 +168,7 @@ int main()
             }
         }
         for(int i=0;i<97;i++){
-            if(elementy[i+1]->match4(elementy[i],elementy[i+2],elementy[i+3])){
+            if(scena.match(elementy[i],elementy[i+1],elementy[i+2],elementy[i+3],elementy[i+4],4)){
                 elementy[i+1]->usun4(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy);
                 scena.punkty+=40;
                 scena.czy_zmiana_wyniku=true;
@@ -162,7 +176,7 @@ int main()
             }
         }
         for(int i=0;i<98;i++){
-            if(elementy[i+1]->match3(elementy[i],elementy[i+2])){
+            if(scena.match(elementy[i],elementy[i+1],elementy[i+2],elementy[i+3],elementy[i+4],3)){
                 elementy[i+1]->usun3(i+1,elementy[i],i,elementy[i+2],i+2,elementy);
                 scena.punkty+=30;
                 scena.czy_zmiana_wyniku=true;
