@@ -11,6 +11,7 @@ CONFIG(debug, debug|release){
 }
 
 HEADERS += \
+    abstract.h \
     aktualny_wynik.h \
     cukierek.h \
     elementsceny.h \
@@ -20,6 +21,7 @@ HEADERS += \
     znacznik.h
 
 SOURCES += \
+    abstract.cpp \
     aktualny_wynik.cpp \
     cukierek.cpp \
     elementsceny.cpp \

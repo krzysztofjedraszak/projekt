@@ -1,9 +1,8 @@
 #ifndef NAJLEPSZY_WYNIK_H
 #define NAJLEPSZY_WYNIK_H
+#include "abstract.h"
 
-#include "elementsceny.h"
-
-class NajlepszyWynik: public ElementSceny{
+class NajlepszyWynik: public Abstract{
     Texture cyfry;
 public:
     NajlepszyWynik();

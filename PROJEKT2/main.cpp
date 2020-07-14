@@ -17,6 +17,7 @@
 #include "plansza.h"
 #include "zegar.h"
 #include "znacznik.h"
+#include "abstract.h"
 
 using namespace std;
 using namespace sf;
@@ -39,6 +40,20 @@ int main()
     vector <Zegar*> zegary;
     naj.wyswietl(wczytane,najlepsze);
 
+
+//    ElementSceny elem;
+//    for(int j=0;j<10;j++){
+//        for(int i=0;i<10;i++){
+//    elem.cuksy.emplace_back(new Cukierek(154+i*50,104+j*50,0));
+//        }}
+//    elem.nazwa();
+
+
+
+
+
+
+
     for(int j=0;j<10;j++){
         for(int i=0;i<10;i++){
             elementy.emplace_back(new Cukierek(154+i*50,104+j*50,0));
@@ -48,6 +63,7 @@ int main()
     int x,y,x0,y0;
     Cukierek* pierwszy_el;
     Cukierek* drugi_el;
+
 
 
 //    Cukierek w1(10,10,4);
@@ -77,26 +93,26 @@ int main()
                         if(elementy[i]->zaznacz(mouse_pos)){
                             klik++;
                         }
-                        if(klik==1&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
+                        if(klik==1&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->get_jest_klikniety()==false){
                             pierwszy_el=elementy[i];
                             auto pos=pierwszy_el->getPosition();
                             x0=pos.x;
                             y0=pos.y;
                             znaczniki.emplace_back(new Znacznik (x0,y0));
-                            pierwszy_el->jest_klikniety=true;
+                            pierwszy_el->set_jest_klikniety(true);
                         }
-                        if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==true){
-                            pierwszy_el->jest_klikniety=false;
+                        if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->get_jest_klikniety()==true){
+                            pierwszy_el->set_jest_klikniety(false);
                             delete *(znaczniki.begin());
                             znaczniki.erase(znaczniki.begin());
                             klik=0;
                             pierwszy_el=nullptr;
                             drugi_el=nullptr;
                         }
-                        else if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->jest_klikniety==false){
-                            pierwszy_el->jest_klikniety=false;
+                        else if(klik==2&&elementy[i]->zaznacz(mouse_pos)&&elementy[i]->get_jest_klikniety()==false){
+                            pierwszy_el->set_jest_klikniety(false);
                             drugi_el=elementy[i];
-                            drugi_el->jest_klikniety=false;
+                            drugi_el->set_jest_klikniety(false);
                             auto pos2=drugi_el->getPosition();
 //                            cout<<x0<<"  "<<y0<< endl;
 //                            cout<<pos2.x<<"  "<<pos2.y<<endl;
@@ -127,70 +143,55 @@ int main()
             }
         }
 
+
         for(int i=0;i<60;i++){
             if(scena.match(elementy[i],elementy[i+10],elementy[i+20],elementy[i+30],elementy[i+40],5)){
-                elementy[i+10]->usun5(i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy[i+40],i+40,elementy);
-                scena.punkty+=50;
-                scena.czy_zmiana_wyniku=true;
+                scena.usun(elementy[i+10],i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy[i+40],i+40,elementy,5);
+
         //5 pionowo
             }
         }
         for(int i=0;i<70;i++){
             if(scena.match(elementy[i],elementy[i+10],elementy[i+20],elementy[i+30],elementy[i+40],4)){
-                elementy[i+10]->usun4(i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy);
-                scena.punkty+=40;
-                scena.czy_zmiana_wyniku=true;
+                scena.usun(elementy[i+10],i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy[i+40],i+40,elementy,4);
+
         //4 pionowo
             }
         }
-//        for(int i=0;i<80;i++){
-//            if(elementy[i+10]->match3(elementy[i],elementy[i+20])){
-//                elementy[i+10]->usun3(i+10,elementy[i],i,elementy[i+20],i+20,elementy);
-//                scena.punkty+=30;
-//                scena.czy_zmiana_wyniku=true;
-//        //3 pionowo
-//            }
-//        }
         for(int i=0;i<80;i++){
             if(scena.match(elementy[i],elementy[i+10],elementy[i+20],elementy[i+30],elementy[i+40],3)){
-                elementy[i+10]->usun3(i+10,elementy[i],i,elementy[i+20],i+20,elementy);
-                scena.punkty+=30;
-                scena.czy_zmiana_wyniku=true;
-                //3 pionowo
+                scena.usun(elementy[i+10],i+10,elementy[i],i,elementy[i+20],i+20,elementy[i+30],i+30,elementy[i+40],i+40,elementy,3);
+
+        //3 pionowo
             }
         }
         for(int i=0;i<96;i++){
             if(scena.match(elementy[i],elementy[i+1],elementy[i+2],elementy[i+3],elementy[i+4],5)){
-                elementy[i+1]->usun5(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy);
-                scena.punkty+=50;
-                scena.czy_zmiana_wyniku=true;
+                scena.usun(elementy[i+1],i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy,5);
+
         //5 poziomo
             }
         }
         for(int i=0;i<97;i++){
             if(scena.match(elementy[i],elementy[i+1],elementy[i+2],elementy[i+3],elementy[i+4],4)){
-                elementy[i+1]->usun4(i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy);
-                scena.punkty+=40;
-                scena.czy_zmiana_wyniku=true;
+                scena.usun(elementy[i+1],i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy,4);
+
         //4 poziomo
             }
         }
         for(int i=0;i<98;i++){
             if(scena.match(elementy[i],elementy[i+1],elementy[i+2],elementy[i+3],elementy[i+4],3)){
-                elementy[i+1]->usun3(i+1,elementy[i],i,elementy[i+2],i+2,elementy);
-                scena.punkty+=30;
-                scena.czy_zmiana_wyniku=true;
+                scena.usun(elementy[i+1],i+1,elementy[i],i,elementy[i+2],i+2,elementy[i+3],i+3,elementy[i+4],i+4,elementy,3);
+
         //3 poziomo
             }
         }
-        if(scena.czy_zmiana_wyniku==true){
-            scena.czy_zmiana_wyniku=false;
-            akt.wyswietl(scena.punkty,wyniki);
-            naj.zapisz(scena.porownanie(scena.punkty,wczytane,naj,najlepsze));
+        if(scena.get_zmiana()==true){
+            scena.set_zmiana(false);
+            akt.wyswietl(scena.get_punkty(),wyniki);
+            naj.zapisz(scena.porownanie(scena.get_punkty(),wczytane,naj,najlepsze));
         }
         zegar.odliczanie(clock,zegary);
-
-
 
 
         window.clear(Color::Black);
@@ -224,24 +225,4 @@ int main()
     return 0;
 
 }
-//3 poziomo
-//        for(int i=0;i<98;i++){
-//            if(elementy[i+1]->match3(elementy[i],elementy[i+2])){
-//                auto pos1=elementy[i]->getPosition();
-//                auto pos2=elementy[i+1]->getPosition();
-//                auto pos3=elementy[i+2]->getPosition();
-//                cout<<"dziala 3 poziomo"<<endl;
 
-//                delete *(elementy.begin()+i);
-//                elementy.erase(elementy.begin()+i);cout<<elementy.size()<<endl;
-//                elementy.insert(elementy.begin()+i,new Cukierek(pos1.x,pos1.y));
-
-//                delete *(elementy.begin()+i+1);
-//                elementy.erase(elementy.begin()+i+1);cout<<elementy.size()<<endl;
-//                elementy.insert(elementy.begin()+i+1,new Cukierek(pos2.x,pos2.y));
-
-//                delete *(elementy.begin()+i+2);
-//                elementy.erase(elementy.begin()+i+2);cout<<elementy.size()<<endl;
-//                elementy.insert(elementy.begin()+i+2,new Cukierek(pos3.x,pos3.y));
-//            }
-//        }

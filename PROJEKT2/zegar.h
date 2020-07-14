@@ -1,15 +1,14 @@
 #ifndef ZEGAR_H
 #define ZEGAR_H
+#include "abstract.h"
 
-#include "elementsceny.h"
-
-class Zegar: public ElementSceny{
+class Zegar: public Abstract{
     Texture cyfry;
+    float czas=120;
 public:
     Zegar();
     Zegar(int x, int y,int s);
     void odliczanie(Clock &clk, vector<Zegar *> &zegary);
-    float czas=120;
 };
 
 #endif // ZEGAR_H

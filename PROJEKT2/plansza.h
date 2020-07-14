@@ -1,9 +1,8 @@
 #ifndef PLANSZA_H
 #define PLANSZA_H
+#include "abstract.h"
 
-#include "elementsceny.h"
-
-class Plansza: public ElementSceny{
+class Plansza: public Abstract{
     Texture plansza;
 public:
     Plansza();

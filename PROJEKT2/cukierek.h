@@ -1,23 +1,18 @@
 #ifndef CUKIEREK_H
 #define CUKIEREK_H
+#include "abstract.h"
 
-#include "elementsceny.h"
-
-class Cukierek: public ElementSceny{
+class Cukierek: public Abstract{
     Texture cukierek;
     Texture specjalne;
+    int typ;
+    bool jest_klikniety;
 public:
 //    Cukierek(int x,int y,int z);
     Cukierek(int x, int y, int z);
-    void zamiana();
-    int typ;
-    bool jest_klikniety;
-    bool match3(Cukierek *&c1, Cukierek *&c2);
-    bool match4(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3);
-    bool match5(Cukierek *&c1, Cukierek *&c2,Cukierek *&c3,Cukierek *&c4);
-    void usun3(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, vector<Cukierek *> &elementy);
-    void usun4(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, Cukierek *&c3, int val3, vector <Cukierek*> &elementy);
-    void usun5(int val, Cukierek *&c1, int val1, Cukierek *&c2, int val2, Cukierek *&c3,int val3, Cukierek *&c4,int val4, vector<Cukierek *> &elementy);
+    int gettyp();
+    bool get_jest_klikniety();
+    bool set_jest_klikniety(bool n);
 };
 
 #endif // CUKIEREK_H

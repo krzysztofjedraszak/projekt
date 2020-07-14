@@ -51,7 +51,8 @@ OBJECTS_DIR   = .
 
 ####### Files
 
-SOURCES       = ..\PROJEKT2\aktualny_wynik.cpp \
+SOURCES       = ..\PROJEKT2\abstract.cpp \
+		..\PROJEKT2\aktualny_wynik.cpp \
 		..\PROJEKT2\cukierek.cpp \
 		..\PROJEKT2\elementsceny.cpp \
 		..\PROJEKT2\main.cpp \
@@ -59,7 +60,8 @@ SOURCES       = ..\PROJEKT2\aktualny_wynik.cpp \
 		..\PROJEKT2\plansza.cpp \
 		..\PROJEKT2\zegar.cpp \
 		..\PROJEKT2\znacznik.cpp 
-OBJECTS       = aktualny_wynik.o \
+OBJECTS       = abstract.o \
+		aktualny_wynik.o \
 		cukierek.o \
 		elementsceny.o \
 		main.o \
@@ -68,13 +70,15 @@ OBJECTS       = aktualny_wynik.o \
 		zegar.o \
 		znacznik.o
 
-DIST          =  aktualny_wynik.h \
+DIST          =  abstract.h \
+		aktualny_wynik.h \
 		cukierek.h \
 		elementsceny.h \
 		najlepszy_wynik.h \
 		plansza.h \
 		zegar.h \
-		znacznik.h ..\PROJEKT2\aktualny_wynik.cpp \
+		znacznik.h ..\PROJEKT2\abstract.cpp \
+		..\PROJEKT2\aktualny_wynik.cpp \
 		..\PROJEKT2\cukierek.cpp \
 		..\PROJEKT2\elementsceny.cpp \
 		..\PROJEKT2\main.cpp \
@@ -445,7 +449,7 @@ dist:
 	$(ZIP) PROJEKT2.zip $(SOURCES) $(DIST) ..\PROJEKT2\PROJEKT2.pro ..\..\..\5.14.1\mingw73_64\mkspecs\features\spec_pre.prf ..\..\..\5.14.1\mingw73_64\mkspecs\qdevice.pri ..\..\..\5.14.1\mingw73_64\mkspecs\features\device_config.prf ..\..\..\5.14.1\mingw73_64\mkspecs\common\sanitize.conf ..\..\..\5.14.1\mingw73_64\mkspecs\common\gcc-base.conf ..\..\..\5.14.1\mingw73_64\mkspecs\common\g++-base.conf ..\..\..\5.14.1\mingw73_64\mkspecs\common\angle.conf ..\..\..\5.14.1\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\..\5.14.1\mingw73_64\mkspecs\common\windows-vulkan.conf ..\..\..\5.14.1\mingw73_64\mkspecs\common\g++-win32.conf ..\..\..\5.14.1\mingw73_64\mkspecs\common\windows-desktop.conf ..\..\..\5.14.1\mingw73_64\mkspecs\qconfig.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\5.14.1\mingw73_64\mkspecs\features\qt_functions.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\qt_config.prf ..\..\..\5.14.1\mingw73_64\mkspecs\win32-g++\qmake.conf ..\..\..\5.14.1\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\5.14.1\mingw73_64\mkspecs\features\exclusive_builds.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\toolchain.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\default_pre.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\win32\default_pre.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\resolve_config.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\default_post.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\win32\console.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\qml_debug.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\precompile_header.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\warn_on.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\qmake_use.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\file_copies.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\testcase_targets.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\exceptions.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\yacc.prf ..\..\..\5.14.1\mingw73_64\mkspecs\features\lex.prf ..\PROJEKT2\PROJEKT2.pro      
 
 clean: compiler_clean 
-	-$(DEL_FILE) aktualny_wynik.o cukierek.o elementsceny.o main.o najlepszy_wynik.o plansza.o zegar.o znacznik.o
+	-$(DEL_FILE) abstract.o aktualny_wynik.o cukierek.o elementsceny.o main.o najlepszy_wynik.o plansza.o zegar.o znacznik.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -470,10 +474,163 @@ compiler_clean:
 
 ####### Compile
 
-aktualny_wynik.o: ../PROJEKT2/aktualny_wynik.cpp ../PROJEKT2/aktualny_wynik.h
+abstract.o: ../PROJEKT2/abstract.cpp ../PROJEKT2/abstract.h \
+		../../../SFML-2.5.1/include/SFML/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/System.hpp \
+		../../../SFML-2.5.1/include/SFML/Config.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../SFML-2.5.1/include/SFML/System/String.inl \
+		../../../SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o abstract.o ..\PROJEKT2\abstract.cpp
+
+aktualny_wynik.o: ../PROJEKT2/aktualny_wynik.cpp ../PROJEKT2/aktualny_wynik.h \
+		../PROJEKT2/abstract.h \
+		../../../SFML-2.5.1/include/SFML/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/System.hpp \
+		../../../SFML-2.5.1/include/SFML/Config.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../SFML-2.5.1/include/SFML/System/String.inl \
+		../../../SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o aktualny_wynik.o ..\PROJEKT2\aktualny_wynik.cpp
 
 cukierek.o: ../PROJEKT2/cukierek.cpp ../PROJEKT2/cukierek.h \
+		../PROJEKT2/abstract.h \
 		../../../SFML-2.5.1/include/SFML/Window.hpp \
 		../../../SFML-2.5.1/include/SFML/System.hpp \
 		../../../SFML-2.5.1/include/SFML/Config.hpp \
@@ -551,6 +708,7 @@ cukierek.o: ../PROJEKT2/cukierek.cpp ../PROJEKT2/cukierek.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cukierek.o ..\PROJEKT2\cukierek.cpp
 
 elementsceny.o: ../PROJEKT2/elementsceny.cpp ../PROJEKT2/elementsceny.h \
+		../PROJEKT2/abstract.h \
 		../../../SFML-2.5.1/include/SFML/Window.hpp \
 		../../../SFML-2.5.1/include/SFML/System.hpp \
 		../../../SFML-2.5.1/include/SFML/Config.hpp \
@@ -624,7 +782,9 @@ elementsceny.o: ../PROJEKT2/elementsceny.cpp ../PROJEKT2/elementsceny.h \
 		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../PROJEKT2/najlepszy_wynik.h \
+		../PROJEKT2/cukierek.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o elementsceny.o ..\PROJEKT2\elementsceny.cpp
 
 main.o: ../PROJEKT2/main.cpp ../../../SFML-2.5.1/include/SFML/Window.hpp \
@@ -701,19 +861,326 @@ main.o: ../PROJEKT2/main.cpp ../../../SFML-2.5.1/include/SFML/Window.hpp \
 		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
-		../PROJEKT2/elementsceny.h
+		../PROJEKT2/elementsceny.h \
+		../PROJEKT2/abstract.h \
+		../PROJEKT2/aktualny_wynik.h \
+		../PROJEKT2/cukierek.h \
+		../PROJEKT2/najlepszy_wynik.h \
+		../PROJEKT2/plansza.h \
+		../PROJEKT2/zegar.h \
+		../PROJEKT2/znacznik.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ..\PROJEKT2\main.cpp
 
-najlepszy_wynik.o: ../PROJEKT2/najlepszy_wynik.cpp ../PROJEKT2/najlepszy_wynik.h
+najlepszy_wynik.o: ../PROJEKT2/najlepszy_wynik.cpp ../PROJEKT2/najlepszy_wynik.h \
+		../PROJEKT2/abstract.h \
+		../../../SFML-2.5.1/include/SFML/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/System.hpp \
+		../../../SFML-2.5.1/include/SFML/Config.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../SFML-2.5.1/include/SFML/System/String.inl \
+		../../../SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o najlepszy_wynik.o ..\PROJEKT2\najlepszy_wynik.cpp
 
-plansza.o: ../PROJEKT2/plansza.cpp ../PROJEKT2/plansza.h
+plansza.o: ../PROJEKT2/plansza.cpp ../PROJEKT2/plansza.h \
+		../PROJEKT2/abstract.h \
+		../../../SFML-2.5.1/include/SFML/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/System.hpp \
+		../../../SFML-2.5.1/include/SFML/Config.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../SFML-2.5.1/include/SFML/System/String.inl \
+		../../../SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o plansza.o ..\PROJEKT2\plansza.cpp
 
-zegar.o: ../PROJEKT2/zegar.cpp ../PROJEKT2/zegar.h
+zegar.o: ../PROJEKT2/zegar.cpp ../PROJEKT2/zegar.h \
+		../PROJEKT2/abstract.h \
+		../../../SFML-2.5.1/include/SFML/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/System.hpp \
+		../../../SFML-2.5.1/include/SFML/Config.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../SFML-2.5.1/include/SFML/System/String.inl \
+		../../../SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o zegar.o ..\PROJEKT2\zegar.cpp
 
-znacznik.o: ../PROJEKT2/znacznik.cpp ../PROJEKT2/znacznik.h
+znacznik.o: ../PROJEKT2/znacznik.cpp ../PROJEKT2/znacznik.h \
+		../PROJEKT2/abstract.h \
+		../../../SFML-2.5.1/include/SFML/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/System.hpp \
+		../../../SFML-2.5.1/include/SFML/Config.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../SFML-2.5.1/include/SFML/System/String.inl \
+		../../../SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o znacznik.o ..\PROJEKT2\znacznik.cpp
 
 ####### Install

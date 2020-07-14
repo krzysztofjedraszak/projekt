@@ -1,9 +1,8 @@
 #ifndef AKTUALNY_WYNIK_H
 #define AKTUALNY_WYNIK_H
+#include "abstract.h"
 
-#include "elementsceny.h"
-
-class AktualnyWynik: public ElementSceny{
+class AktualnyWynik: public Abstract{
     Texture cyfry;
 public:
     AktualnyWynik();
