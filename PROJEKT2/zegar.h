@@ -8,7 +8,6 @@ class Zegar: public Abstract{
 public:
     Zegar();
     Zegar(int x, int y,int s);
-    void odliczanie(Clock &clk, vector<Zegar *> &zegary);
 };
 
 #endif // ZEGAR_H

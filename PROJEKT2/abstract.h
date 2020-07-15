@@ -10,7 +10,6 @@
 using namespace sf;
 using namespace std;
 
-
 class Abstract: public Sprite
 {
 public:

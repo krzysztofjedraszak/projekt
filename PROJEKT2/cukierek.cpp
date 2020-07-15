@@ -6,7 +6,7 @@ Cukierek::Cukierek(int x,int y,int z)
         if (!specjalne.loadFromFile("grafika/specjalne.png")) {
             std::cerr << "Could not load texture" << std::endl;
         }
-
+        typ=7;
         setTexture(specjalne);
         setTextureRect(IntRect(196,0,49,49));
         setPosition(x,y);

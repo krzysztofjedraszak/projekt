@@ -7,9 +7,6 @@ class NajlepszyWynik: public Abstract{
 public:
     NajlepszyWynik();
     NajlepszyWynik(const int x,const int y,const int s);
-    void wyswietl(string str, vector<NajlepszyWynik *> &najlepsze);
-    string wczytaj();
-    void zapisz(string wynik);
 };
 
 #endif // NAJLEPSZY_WYNIK_H
