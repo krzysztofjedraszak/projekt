@@ -8,8 +8,7 @@ class Cukierek: public Abstract{
     int typ;
     bool jest_klikniety;
 public:
-//    Cukierek(int x,int y,int z);
-    Cukierek(int x, int y, int z);
+    Cukierek(int x, int y);
     int gettyp();
     bool get_jest_klikniety();
     bool set_jest_klikniety(bool n);

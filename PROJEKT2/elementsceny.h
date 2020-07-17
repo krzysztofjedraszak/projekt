@@ -12,7 +12,6 @@ class ElementSceny: public Abstract{
     vector <Cukierek*> cuksy;
     vector <Znacznik*> znaczniki;
     vector <AktualnyWynik*> wyniki;
-//    vector <NajlepszyWynik*> najlepsze;
     vector <NajlepszyWynik*> best;
     vector <Zegar*> zegarki;
     int punkty;
