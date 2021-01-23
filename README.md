@@ -1,5 +1,8 @@
 
 # CANDY CRUSH SAGA
+
+![chrome_NmBlf6qEnb](https://user-images.githubusercontent.com/65609128/105609970-12bc7c80-5dad-11eb-8612-c127becc305d.jpg)
+
 Celem gracza jest zdobycie jak największej ilości punktów, gracz ma na to 120 s. Sterowanie będzie się odbywać za pomocą myszki. Kliknięcie zaznacza cukierek, następne kliknięcie usuwa zaznaczenia jeżeli jest to ten sam cukierek, natomiast jeśli inny następuje zamiana. Cukierki można przesuwać o dowolną liczbę pól. Dla 3 cukierków w linii będą się usuwać 3 cukierki, dla czterech 4, a dla pięciu 5. Punkty dodawane to odpowiednio 30pkt, 40 pkt, 50pkt. W grze na bieżąco wyświetlany jest aktualny wynik, pozostały czas oraz najlepszy wynik. Po upływie czasu gra się kończy.
 
 ### Filmik prezentujący grę
